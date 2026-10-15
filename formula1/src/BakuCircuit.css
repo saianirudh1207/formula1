@@ -1,0 +1,306 @@
+
+.live-circuit-panel {
+  position: relative;
+  overflow: hidden;
+  margin: 20px 0;
+  padding: 20px;
+  color: #f5f6ff;
+  background: #070911;
+  border: 1px solid #3c233e;
+  border-radius: 14px;
+  box-shadow: 0 0 24px rgba(255, 35, 80, 0.12);
+}
+
+.live-circuit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.live-circuit-eyebrow {
+  color: #ff596f;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.live-circuit-header h2 {
+  margin: 8px 0;
+  font-size: 22px;
+}
+
+.live-circuit-header p {
+  margin: 0;
+  color: #a4abc2;
+  font-size: 12px;
+}
+
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  color: #ff7588;
+  font-size: 10px;
+  letter-spacing: 1px;
+  border: 1px solid #6e293d;
+  border-radius: 20px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff3157;
+  box-shadow: 0 0 12px #ff3157;
+  animation: bakuPulse 1.2s infinite;
+}
+
+.live-circuit-map {
+  position: relative;
+  min-height: 300px;
+  margin-top: 18px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #080b17;
+  border: 1px solid #31304a;
+  border-radius: 10px;
+}
+
+/* Actual generated image background */
+.circuit-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(
+      rgba(4, 6, 16, 0.25),
+      rgba(4, 6, 16, 0.42)
+    ),
+    url("/baku-neon-track.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: bakuBackgroundGlow 5s ease-in-out infinite alternate;
+}
+
+.circuit-overlay {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  overflow: visible;
+}
+
+.racing-dashes {
+  animation: racingLineMove 1.5s linear infinite;
+}
+
+.circuit-lap-badge,
+.circuit-pit-badge {
+  position: absolute;
+  bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 11px 14px;
+  background: rgba(5, 7, 16, 0.88);
+  border: 1px solid rgba(255, 64, 94, 0.7);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+}
+
+.circuit-lap-badge {
+  left: 14px;
+}
+
+.circuit-pit-badge {
+  right: 14px;
+}
+
+.circuit-lap-badge span,
+.circuit-pit-badge span {
+  color: #aab0c8;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.circuit-lap-badge strong,
+.circuit-pit-badge strong {
+  color: #ff526b;
+  font-size: 20px;
+}
+
+.circuit-lap-badge small {
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.live-circuit-progress {
+  margin-top: 18px;
+}
+
+.live-circuit-progress-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 9px;
+  color: #aeb3c9;
+  font-size: 11px;
+}
+
+.live-circuit-progress-label strong {
+  color: #ff6077;
+}
+
+.live-progress-track,
+.telemetry-bar {
+  height: 7px;
+  overflow: hidden;
+  background: #27283a;
+  border-radius: 20px;
+}
+
+.live-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff244f, #ff9b55);
+  box-shadow: 0 0 12px rgba(255, 40, 80, 0.6);
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+.live-circuit-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.live-circuit-stats > div {
+  min-width: 0;
+  padding: 15px;
+  background: linear-gradient(145deg, #111523, #090b13);
+  border: 1px solid #303249;
+  border-radius: 9px;
+}
+
+.live-circuit-stats span,
+.live-circuit-stats strong,
+.live-circuit-stats small {
+  display: block;
+}
+
+.live-circuit-stats span {
+  color: #a9aec5;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.live-circuit-stats strong {
+  margin: 8px 0;
+  color: #ff526b;
+  font-size: 22px;
+}
+
+.live-circuit-stats small {
+  color: #9299b3;
+  font-size: 10px;
+}
+
+.telemetry-bar {
+  margin-top: 10px;
+}
+
+.telemetry-bar-fill {
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+.fuel-fill {
+  background: linear-gradient(90deg, #22c7ff, #68e3ff);
+}
+
+.wear-fill {
+  background: linear-gradient(90deg, #ffb443, #ff435e);
+}
+
+.live-circuit-note {
+  margin: 14px 0 0;
+  color: #858ca5;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+@keyframes bakuPulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 12px #ff3157;
+  }
+  50% {
+    opacity: 0.4;
+    box-shadow: 0 0 3px #ff3157;
+  }
+}
+
+@keyframes racingLineMove {
+  to {
+    stroke-dashoffset: -34;
+  }
+}
+
+@keyframes bakuBackgroundGlow {
+  from {
+    filter: brightness(0.82) saturate(1.05);
+  }
+  to {
+    filter: brightness(1.05) saturate(1.2);
+  }
+}
+
+@media (max-width: 600px) {
+  .live-circuit-panel {
+    padding: 12px;
+  }
+
+  .live-circuit-map {
+    min-height: 240px;
+  }
+
+  .circuit-overlay {
+    min-height: 240px;
+  }
+
+  .live-circuit-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .circuit-lap-badge,
+  .circuit-pit-badge {
+    bottom: 8px;
+    padding: 7px;
+  }
+
+  .circuit-lap-badge {
+    left: 8px;
+  }
+
+  .circuit-pit-badge {
+    right: 8px;
+  }
+
+  .circuit-lap-badge strong,
+  .circuit-pit-badge strong {
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot,
+  .racing-dashes,
+  .circuit-background {
+    animation: none;
+  }
+}
